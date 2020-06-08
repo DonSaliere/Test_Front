@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from "react-router-dom";
+import s from './Login.module.css';
 
 class Login extends React.Component {
 
@@ -38,30 +39,35 @@ class Login extends React.Component {
         if (this.props.isAuth) {
             return <Redirect to={"/profile"} />;
         }
-debugger
+
         return (
-            <div>
-                <form className="item-add-form d-flex"
+            <div className = {`${s.container} ${'text-center'}`}>
+                <form
                     onSubmit={this.handleSubmit}>
-                    <input
-                        type="text"
-                        className="form-control"
-                        name="username"
-                        value={username}
-                        onChange={this.handleChange}
-                        placeholder="Имя" />
-                    <input
-                        type="text"
-                        className="form-control"
-                        name="password"
-                        value={password}
-                        onChange={this.handleChange}
-                        placeholder="Пароль" />
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            className="form-control"
+                            name="username"
+                            value={username}
+                            onChange={this.handleChange}
+                            placeholder="Имя" />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            className="form-control"
+                            name="password"
+                            value={password}
+                            onChange={this.handleChange}
+                            placeholder="Пароль" />
+                    </div>
                     <button type="submit"
                         className="btn btn-primary btn-sm">
-                        Sign In
+                        Войти
                 </button>
                 </form>
+
             </div>
         )
     }
