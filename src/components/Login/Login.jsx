@@ -35,10 +35,10 @@ class Login extends React.Component {
 
     render() {
         const { username, password } = this.state;
-        if (this.props.user.isAuth) {
+        if (this.props.isAuth) {
             return <Redirect to={"/profile"} />;
         }
-
+debugger
         return (
             <div>
                 <form className="item-add-form d-flex"
@@ -59,7 +59,7 @@ class Login extends React.Component {
                         placeholder="Пароль" />
                     <button type="submit"
                         className="btn btn-primary btn-sm">
-                        Add Item
+                        Sign In
                 </button>
                 </form>
             </div>
