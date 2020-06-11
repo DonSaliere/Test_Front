@@ -6,13 +6,14 @@ class Login extends React.Component {
 
     state = {
         username: '',
-        password: ''
+        password: '',
+        errorMsg: ''
     };
 
     checkCredentials = (params) => {
         if (
             params.username.toLowerCase() !== 'admin' ||
-            params.password !== '12345'
+            params.password !== 'admin'
         ) {
             return false
         }
@@ -25,6 +26,9 @@ class Login extends React.Component {
         const { username, password } = this.state;
         if (this.checkCredentials({ username, password })) {
             this.props.logIn(username);
+        }
+        else {
+            this.setState({errorMsg: 'Имя или пароль введены не верно'})
         }
     };
 
@@ -41,7 +45,7 @@ class Login extends React.Component {
         }
 
         return (
-            <div className = {`${s.container} ${'text-center'}`}>
+            <div className={`${s.container} ${'text-center'}`}>
                 <form
                     onSubmit={this.handleSubmit}>
                     <div className="form-group">
@@ -65,9 +69,11 @@ class Login extends React.Component {
                     <button type="submit"
                         className="btn btn-primary btn-sm">
                         Войти
-                </button>
+                    </button>
+                    <div className={s.errorMessage}>
+                        {this.state.errorMsg}
+                     </div>
                 </form>
-
             </div>
         )
     }

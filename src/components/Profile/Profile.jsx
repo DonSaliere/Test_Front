@@ -1,14 +1,17 @@
 import React from 'react';
-import { Redirect } from "react-router-dom";
+import p from './Profile.module.css';
 
 const Profile = (props) => {
-  if (!props.user.isAuth) {
-    return <Redirect to={"/login"} />;
-  }
+  let logOut = () => {
+    props.logOut();
+};
   return (
     <React.Fragment>
-      <h2>Профиль</h2>
-      <p>Вас зовут: {props.user.user}</p>
+      <div className={`${p.container} ${'text-center'}`}>
+        <h3>Профиль</h3>
+        <p>Ваш логин: {props.user}</p>
+        <button onClick={logOut} className="btn btn-primary btn-sm">Выйти</button>
+      </div>
     </React.Fragment>
   )
 }

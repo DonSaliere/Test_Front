@@ -9,8 +9,6 @@ class NavbarContainer extends React.Component {
   }
   
   const mapStateToProps = state => ({
-    user: state.auth.user,
-    isAuth: state.auth.isAuth
   })
   
   const mapDispatchToProps = dispatch => ({})

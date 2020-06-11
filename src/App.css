@@ -1,54 +1,33 @@
-/* .app-wrapper{
-    display:grid; 
-    width: 1200px;
-    margin: 0 auto;
-    grid-template-areas:
-    "h h"
-    "n c";
-    grid-template-rows: 60px 1fr;
-    grid-template-columns: 2fr 10fr;
-    grid-gap: 10px;
-}
-
-.app-wrapper-content {
-    grid-area: c; 
-    background-color: rgb(190, 204, 229);
-    border-radius: 10px; 
-} */
-
-
 .nav-bar {
-    background-color: #24292e;
-    color: rgba(255,255,255,0.75);
-    overflow: hidden;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #24292e;
+  color: rgba(255,255,255,0.75);
+  overflow: hidden;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
   
 .nav-bar a {
-      color: #aef9d7;
-      text-align: center;
-      padding-left: 10px;
-      text-decoration: none;
-      font-size: 16px;
-    }
+  color: #aef9d7;
+  text-align: center;
+  padding-left: 10px;
+  text-decoration: none;
+  font-size: 16px;
+}
   
 .nav-bar a.active {
-      color: #fff;
-    }
+  color: #fff;
+}
   
 .nav-bar a:hover {
-      color: rgb(243, 223, 136);
-    }
+  color: rgb(243, 223, 136);
+}
 
-    .align-center {
-        text-align: center;
-      }
-    .item-add-form {
-        margin-top: 30px;
-        margin-bottom: 10px;
-      }
-
- 
+.align-center {
+  text-align: center;
+}
+.item-add-form {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}

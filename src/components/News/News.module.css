@@ -1,0 +1,7 @@
+tbody tr:hover {
+    background: #007bff15;
+}
+tbody tr:active {
+    background-color: #007bff93;
+    color:  #ffffff;
+}

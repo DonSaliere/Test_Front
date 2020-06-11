@@ -1,9 +1,4 @@
 .container {
-    width: 300px;
     margin: 0 auto;
     padding-top: 30px;
 }
-
-.errorMessage {
-    color: red;
-  }

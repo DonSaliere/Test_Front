@@ -1,18 +1,25 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import Profile from './Profile';
+import { logOutInCreator } from '../../Redux/auth-reducer';
+import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 
-class ProfileContainer extends React.Component {
-    render() {
-      return <Profile user={this.props} />
+let AuthRedirectComponent = withAuthRedirect(Profile);
+
+const mapStateToProps = state => {
+  return {
+    user: state.auth.user
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    logOut: () => {
+      let action = logOutInCreator();
+      dispatch(action);
     }
   }
-  
-  const mapStateToProps = state => ({
-    user: state.auth.user,
-    isAuth: state.auth.isAuth
-  })
-  
-  const mapDispatchToProps = dispatch => ({})
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(ProfileContainer)
+}
+
+const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(AuthRedirectComponent);
+
+export default ProfileContainer;
