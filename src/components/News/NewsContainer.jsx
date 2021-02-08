@@ -1,17 +1,21 @@
 import { connect } from 'react-redux';
 import News from './News';
-import { updateNewsCreator, updateNewsTextCreator, deleteNewsCreator,updateNewsIdCreator} from '../../Redux/news-reducer';
+import { addNewsCreator, updateNewsCreator, updateNewsTextCreator, deleteNewsCreator,updateNewsIdCreator} from '../../Redux/news-reducer';
 import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 
-let AuthRedirectComponent = withAuthRedirect(News);
+// let AuthRedirectComponent = withAuthRedirect(News);
 
 const mapStateToProps = state => ({
   news: state.news.NewsData,
-  newNewsText: state.news.newNewsText
+  newNewsText: state.news.newNewsText,
+  selectedID: state.news.selectedID
 })
 
 const mapDispatchToProps = dispatch => {
   return {
+    addNews: () => {
+      dispatch(addNewsCreator());
+    },
     updateNews: () => {
       dispatch(updateNewsCreator());
     },
@@ -28,6 +32,6 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const NewsContainer = connect(mapStateToProps, mapDispatchToProps)(AuthRedirectComponent);
+const NewsContainer = withAuthRedirect(connect(mapStateToProps, mapDispatchToProps)(News));
 
 export default NewsContainer;

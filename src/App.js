@@ -4,7 +4,7 @@ import ProfileContainer from './components/Profile/ProfileContainer';
 import LoginContainer from './components/Login/LoginContainer';
 import Navbar from './components/Navbar/Navbar';
 import NewsContainer from './components/News/NewsContainer';
-import Home from './components/Home/Home'
+import Home from './components/Home/Home';
 import "bootstrap/dist/css/bootstrap.css";
 import './App.css';
 

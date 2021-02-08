@@ -1,7 +1,7 @@
 tbody tr:hover {
-    background: #007bff15;
+    cursor: pointer;
 }
-tbody tr:active {
+.active {
     background-color: #007bff93;
     color:  #ffffff;
 }

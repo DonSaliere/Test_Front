@@ -19,14 +19,10 @@ export default class News extends Component {
           <thead>
 
           </thead>
-          <tbody className={n}>
+          <tbody >
             {this.props.news.map(item => (
-                item.active == 1?
-                <tr key={item.id} onClick={() => { 
-                  this.updateState(item.id, item.news)
-                  this.className={n}
-                  } }
-                  >
+                item.active === 1?
+                <tr className = {this.props.selectedID === item.id && n.active} key={item.id} onClick={() => { this.updateState(item.id, item.news)}}>
                   <td className="align-center">{item.id}</td>
                   <td className="align-center">{item.news}</td>
                 </tr>: ""        

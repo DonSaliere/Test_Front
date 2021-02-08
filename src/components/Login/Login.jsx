@@ -25,7 +25,7 @@ class Login extends React.Component {
         e.preventDefault();
         const { username, password } = this.state;
         if (this.checkCredentials({ username, password })) {
-            this.props.logIn(username);
+            this.props.loginInCreator(username);
         }
         else {
             this.setState({errorMsg: 'Имя или пароль введены не верно'})
